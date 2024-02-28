@@ -1,0 +1,56 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/uofi-modal-block",
+	"version": "1.0.0",
+	"title": "Illinois Modal Block",
+	"category": "widgets",
+	"icon": "align-center",
+	"description": "Modal block with trigger options.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "uofi-modal-block",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"modalId": {
+			"type": "string",
+			"default": ""
+		},
+		"triggerType": {
+			"type": "string",
+			"default": "button"
+		},
+		"triggerText": {
+			"type": "string"
+		},
+		"triggerButtonStyle":{
+			"type": "string",
+			"default": "il-white-blue"
+		},
+		"triggerIcon": {
+			"type": "string",
+			"default": "admissions"
+		},
+		"triggerIconStyle": {
+			"type": "string",
+			"default": "il-icon"
+		},
+		"triggerIconColor": {
+			"type": "string",
+			"default": "orange-icon"
+		},
+		"triggerJustification": {
+			"type": "string",
+			"default": "items-justified-left"
+		},
+		"modalHeading": {
+			"type": "string",
+			"default": ""
+		}
+	}
+}

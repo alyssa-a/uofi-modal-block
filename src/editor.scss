@@ -1,0 +1,40 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+// .wp-block-create-block-uofi-modal-block {
+// 	border: 1px dotted #f00;
+// }
+
+.uofi-modal {
+	position: static;
+	display: block;
+	width: unset;
+	height: unset;
+	border: 1px solid #000000;
+	padding: 20px;
+	background: unset;
+	margin-top: 1rem;
+}
+
+.uofi-modal.il-formatted > .uofi-modal-content {
+	padding: 0 !important;
+	margin: 0 !important;
+    max-width: 100%;
+	overflow: unset;
+}
+
+.uofi-modal-content > h2 {
+	margin-top: 0 !important;
+    margin-bottom: 1rem !important;
+}
+
+.close-btn {
+	display: none;
+}
+
+.uofi-modal-text-trigger {
+	background: none;
+}

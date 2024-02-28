@@ -1,0 +1,97 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-uofi-modal-block {
+	font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+
+.no-scroll {
+	overflow: hidden;
+	margin-right: var(--scrollbar-width);
+}
+
+.uofi-modal-trigger-wrapper {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+/* --- icon trigger --- */
+.uofi-modal-icon-button {
+	border: none;
+	background: none;
+	min-width: 45px;
+	min-height: 45px;
+	padding: 3px;
+	text-align: center;
+}
+
+.uofi-modal-icon {
+	font-size: 36px !important;
+}
+
+.orange-icon {
+	color: var(--il-orange);
+}
+
+.blue-icon {
+	color: var(--il-blue);
+}
+
+.white-icon {
+	color: #ffffff;
+}
+/* --- end icon trigger --- */
+
+.uofi-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 12000;
+    width: 100%;
+    height: 100%;
+	padding: 1rem;
+	background: rgba(0, 0, 0, 0.4);
+	overflow: auto;
+}
+
+.uofi-modal:focus,
+.uofi-modal:focus-visible {
+	outline: none;
+}
+
+.uofi-modal.il-formatted > .uofi-modal-content {
+	margin: 2rem auto !important;
+	padding: 2rem;
+    background: #ffffff;
+    max-width: 800px;
+    width: 100%;
+}
+
+.uofi-modal-header {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+}
+
+.uofi-modal-header .uofi-modal-close-btn {
+	min-width: 45px;
+	min-height: 45px;
+	padding: 0;
+	background: none;
+	border: none;
+}
+
+.uofi-modal-close-btn .il-icon {
+	font-size: 24px;
+}
+
+.uofi-modal-footer {
+	text-align: right;
+	border-top: 1px solid var(--il-cloud-3);
+	padding-top: 1rem;
+}
