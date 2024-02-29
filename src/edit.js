@@ -25,6 +25,7 @@ import './editor.scss';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { useInstanceId } from '@wordpress/compose';
 import { useSelect } from '@wordpress/data';
+import { useEffect } from '@wordpress/element';
 
 // Import icon name list
 import iconOptionsList from '../includes/il-icons-options.json';
@@ -41,9 +42,17 @@ import iconOptionsList from '../includes/il-icons-options.json';
 export default function Edit( { attributes, setAttributes, isSelected, clientId } ) {
 	
 	const { modalId, triggerType, triggerText, triggerButtonStyle, triggerIcon, triggerIconStyle, triggerIconColor, triggerJustification, modalHeading } = attributes;
-
+	
+	const isInnerBlockSelected = useSelect(
+		(select) => {
+			return select('core/block-editor').hasSelectedInnerBlock(clientId)
+		}
+	);
+	
 	const instanceId = useInstanceId(Edit);
-	setAttributes({ modalId: `uofi-modal-${instanceId + 1}` });
+	useEffect(() => {
+		setAttributes({ modalId: `uofi-modal-${instanceId + 1}` });
+	}, []);
 	
 	const iconOptions = iconOptionsList.map((icon) => {
 			return ({label: icon, value: icon});
@@ -51,12 +60,6 @@ export default function Edit( { attributes, setAttributes, isSelected, clientId 
 	);
 
 	const modalTitleLabel = modalId + "-title";
-
-	const isInnerBlockSelected = useSelect(
-		(select) => {
-			return select('core/block-editor').hasSelectedInnerBlock(clientId)
-		}
-	);
 	
 	const onChangeTriggerType = (newTriggerType) => {
 		setAttributes( { triggerType: newTriggerType } );
@@ -174,8 +177,7 @@ export default function Edit( { attributes, setAttributes, isSelected, clientId 
 							placeholder={ __( 'Trigger text...' ) }
 							value={ triggerText }
 							onChange={ onChangeTriggerText }
-							allowedFormats={ [ 'core/bold', 'core/italic' ] }
-							withoutInteractiveFormatting
+							allowedFormats={ [] }
 						/>
 					</button>
 				) :
@@ -197,7 +199,7 @@ export default function Edit( { attributes, setAttributes, isSelected, clientId 
 							placeholder={ __( 'Modal title...' ) }
 							value={ modalHeading }
 							onChange={ onChangeModalHeading }
-							allowedFormats={ [ 'core/bold', 'core/italic' ] }
+							allowedFormats={ [] }
 						/>
 
 						<InnerBlocks/>

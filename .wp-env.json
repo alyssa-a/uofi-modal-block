@@ -1,0 +1,4 @@
+{
+    "plugins": [ "." ],
+    "themes": [ "../wptheme_university_of_illinois_2020/dist/uofi-2020" ]
+}
