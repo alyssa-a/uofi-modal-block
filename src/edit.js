@@ -45,7 +45,7 @@ export default function Edit( { attributes, setAttributes, isSelected, clientId 
 	
 	const isInnerBlockSelected = useSelect(
 		(select) => {
-			return select('core/block-editor').hasSelectedInnerBlock(clientId)
+			return select('core/block-editor').hasSelectedInnerBlock(clientId, true)
 		}
 	);
 	
